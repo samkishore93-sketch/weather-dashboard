@@ -1,0 +1,39 @@
+const weatherData = {
+    Chennai:{
+        temp:"32°C",
+        condition:"Sunny",
+        humidity:"60%"
+    },
+    Delhi:{
+        temp:"28°C",
+        condition:"Cloudy",
+        humidity:"55%"
+    },
+    London:{
+        temp:"18°C",
+        condition:"Rainy",
+        humidity:"70%"
+    }
+};
+
+function getWeather(){
+
+    let city = document.getElementById("city").value;
+
+    if(weatherData[city]){
+
+        document.getElementById("cityName").innerHTML = city;
+        document.getElementById("temp").innerHTML =
+        "Temperature: " + weatherData[city].temp;
+
+        document.getElementById("condition").innerHTML =
+        "Condition: " + weatherData[city].condition;
+
+        document.getElementById("humidity").innerHTML =
+        "Humidity: " + weatherData[city].humidity;
+
+    }
+    else{
+        alert("City not found");
+    }
+}
